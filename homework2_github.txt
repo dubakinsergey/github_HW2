@@ -1,0 +1,95 @@
+GitHub. HW_2
+1. На локальном репозитории сделать ветки для:
+- Postman
+- Jmeter
+- CheckLists
+- Bag Reports
+- SQL
+- Charles
+- Mobile testing
+
+1. Создать папку для локального репозитория  mkdir github_HW2
+2. Подключить git к проекту (на локальном репозитории) git init
+3. Создать файл ( с описание ДЗ) touch homework2_github.txt
+4. Добавить файл в индекс область git add .
+5. Закоммитить файл  git commit -m "homework2 file"
+6. Создать ветки git branch Postman git branch Jmeter git branch CheckLists git branch Bag_Reports git branch SQL git branch Charles git branch Mobile_testing
+
+2. Запушить все ветки на внешний репозиторий
+1. Создать репозиторий на GitHub Открыть свой профиль на Github Нажать «+» (new repository) Заполнить поля (Repository name: github_HW2)
+2. В созданном репозитории GitHub скопировать ссылку (Code -> HTTPS)
+3. Соединить локальный и внешний репозиторий В терминале ввести git remote add origin https://github.com/dubakinsergey/github_HW2.git
+4. Устанавить связь между локальной веткой main и веткой с таким же именем на внешнем репозитории git push -u origin main
+5. Запушить все ветки на внешний репозиторий  git push --all origin
+
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
+Перейти в ветку Bag_Reports
+git checkout Bag_Reports
+
+cat > bug_report.txt
+id      
+severity
+environment
+title
+steps
+expected result
+actual result
+author
+ctrl + D
+
+4. Запушить структуру багрепорта на внешний репозиторий
+ git add .
+git commit -m "create bug_report.txt"
+git push origin Bag_Reports
+
+5. Вмержить ветку Bag Reports в Main
+git checkout main
+git merge -m "Merging Bug_report into main" Bag_Reports
+
+6. Запушить main на внешний репозиторий.
+git push
+
+7. В ветке CheckLists набросать структуру чек листа.
+
+git checkout CheckLists
+cat > checkLists.txt
+
+Общая проверка
+Все ли элементы интерфейса присутствуют и функционируют корректно?
+Работает ли авторизация и аутентификация пользователей?
+Работают ли уведомления и сообщения об ошибках?
+
+ Проверка функциональности
+Работает ли каждая функция приложения корректно? (например, регистрация нового пользователя, поиск по сайту, добавление товара в корзину и т.д.)
+Существует ли ограничение на количество одновременных пользователей?
+Корректно ли происходит обработка данных?
+
+ Проверка безопасности
+Существуют ли уязвимости приложения?
+Защищены ли данные пользователей?
+Подвергается ли приложение атакам на CSRF, XSS, SQL-инъекции и т.д.?
+
+ Проверка производительности
+Как быстро загружается сайт?
+Как быстро выполняются запросы на сервер?
+Какое количество запросов может обработать приложение за определенное время?
+
+ Проверка совместимости
+Работает ли приложение на разных браузерах и операционных системах?
+Поддерживает ли приложение мобильные устройства?
+Работает ли приложение в разных языковых и региональных настройках?
+
+8. Запушить структуру на внешний репозиторий
+git add .
+git commit -m "create checkLists.txt"
+git push origin CheckLists
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+1. Перейти на страницу репозитория на GitHub
+2. Переключиться на ветку CheckLists
+3. Нажать на кнопку "New Pull Request"
+4. Выбрать ветку main в качестве "base branch" (базовой ветки) и ветку CheckLists в качестве "compare branch" (сравниваемой ветки)
+5. Нажать на кнопку "Create Pull Request"
+6. Подтвердить Merge pull request 
+10. Синхронизировать Внешнюю и Локальную ветки Main
+git pull
